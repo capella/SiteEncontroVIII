@@ -4,7 +4,7 @@ projection {
     html,
     input,
     textarea {
-        font-family: 'Roboto Slab', arial, sans-serif
+        font-family: 'Permanent Marker', arial, sans-serif
     }
     html {
         line-height: 1.6
@@ -101,7 +101,7 @@ projection {
     blockquote,
     q,
     .ending {
-        font-family: "Roboto Slab", arial, sans-serif
+        font-family: "Permanent Marker", arial, sans-serif
     }
     h1,
     h2,
@@ -725,7 +725,7 @@ projection {
         text-decoration: none
     }
     .cinema-progress {
-        font: normal 33px/54px "Roboto Slab", arial, sans-serif;
+        font: normal 33px/54px "Permanent Marker", arial, sans-serif;
         letter-spacing: 2px
     }
     .cinema-progress span {
@@ -824,7 +824,7 @@ projection {
     }
     .gallery-nav ul span.gallery-dot,
     .gallery-nav li:nth-last-child(2):after {
-        font: normal 33px/54px "Roboto Slab", arial, sans-serif;
+        font: normal 33px/54px "Permanent Marker", arial, sans-serif;
         letter-spacing: 2px
     }
     .gallery-prev,
@@ -1020,7 +1020,7 @@ projection {
     width: 110px;
     text-align: left;
     padding-left: 22px;
-    font-family: 'Roboto Slab', arial, sans-serif;
+    font-family: 'Permanent Marker', arial, sans-serif;
     display: none;
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -1049,7 +1049,7 @@ projection {
     margin-right: 0
 }
 .distance-icon-amount {
-    font-family: 'Roboto Slab', arial, sans-serif;
+    font-family: 'Permanent Marker', arial, sans-serif;
     font-size: 34px;
     opacity: .5;
     letter-spacing: 2px;
@@ -1109,7 +1109,8 @@ projection {
     }
     .header a,
     .footer a {
-        text-decoration: none
+        text-decoration: none;
+        font-size: 10px;
     }
     .header h1,
     .footer h1 {
@@ -1163,10 +1164,10 @@ projection {
     .google-js .nav em {
         visibility: hidden
     }
-    .wf-'Roboto Slab'-n7-active .nav a,
-    .wf-'Roboto Slab'-n7-inactive .nav a,
-    .wf-'Roboto Slab'-n7-active .nav em,
-    .wf-'Roboto Slab'-n7-inactive .nav em {
+    .wf-'Permanent Marker'-n7-active .nav a,
+    .wf-'Permanent Marker'-n7-inactive .nav a,
+    .wf-'Permanent Marker'-n7-active .nav em,
+    .wf-'Permanent Marker'-n7-inactive .nav em {
         visibility: visible
     }
     .nav .sitemap {
@@ -1482,7 +1483,7 @@ projection {
         display: block
     }
     .faq h2 {
-        font: 24px/1.5em 'Roboto Slab', arial, sans-serif;
+        font: 24px/1.5em 'Permanent Marker', arial, sans-serif;
         letter-spacing: 0;
         margin-left: auto;
         margin-right: auto;
@@ -1496,7 +1497,7 @@ projection {
         text-align: left
     }
     .faq .tabs-content h4 {
-        font: bold 14px/2em 'Roboto Slab', arial, sans-serif;
+        font: bold 14px/2em 'Permanent Marker', arial, sans-serif;
         letter-spacing: 2px;
         margin: 50px 0 7px
     }
