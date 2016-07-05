@@ -10,7 +10,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -23,30 +23,30 @@
 
     <div class="header" role="banner">
       <h1>
-        <a data-g-action="navigate" data-g-event="Global Nav" data-g-label="Project Loon" href=
-        "../loon/">VIII Encontro do BCC</a>
+        <a href=
+        "#/">VIII Encontro do BCC</a>
       </h1>
       <div class="nav" role="navigation">
         <ul class="sitemap" ng-app="link">
 
           <li ng-class="{active: act('/')}">
-            <a href="#/" ng-if="!act('/')">O Encontro</a>
-            <em ng-if="act('/')">O Encontro</em>
+            <a href="#/" ng-hide="act('/')">O Encontro</a>
+            <em ng-hide="!act('/')">O Encontro</em>
           </li>
 
           <li ng-class="{active: act('/palestrantes')}">
-            <a href="#/palestrantes" ng-if="!act('/palestrantes')"> Palestrantes</a>
-            <em ng-if="act('/palestrantes')"> Palestrantes</em>
+            <a href="#/palestrantes" ng-hide="act('/palestrantes')"> Palestrantes</a>
+            <em ng-hide="!act('/palestrantes')"> Palestrantes</em>
           </li>
 
           <li ng-class="{active: act('/programacao')}">
-            <a href="#/programacao" ng-if="!act('/programacao')">Programação</a>
-            <em ng-if="act('/programacao')">Programação</em>
+            <a href="#/programacao" ng-hide="act('/programacao')">Programação</a>
+            <em ng-hide="!act('/programacao')">Programação</em>
           </li>
 
           <li ng-class="{active: act('/local')}">
-            <a href="#/local" ng-if="!act('/local')">Local</a>
-            <em ng-if="act('/local')">Local</em>
+            <a href="#/local" ng-hide="act('/local')">Local</a>
+            <em ng-hide="!act('/local')">Local</em>
           </li>
 
 
@@ -57,6 +57,33 @@
     <div class="main" role="main">
       {{$route.current.activetab}}
       <div ng-view=""></div>
+      <div class="ending">
+        <h5>Apoio:</h5>
+        <img src="images/logo.png" alt="" style="width: 50px;">
+      </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    <!--<ul class="about">
+      <li>
+        <a data-g-action="click" data-g-event="Footer" data-g-label="Privacy &amp; Terms" href=
+        "https://www.google.com/intl/en/policies/">Privacy &amp; Terms</a>
+      </li>
+      <li>
+        <a data-g-action="navigate" data-g-event="Footer" data-g-label="FAQ" href=
+        "../loon/faq/">FAQ</a>
+      </li>
+      <li>
+        <a data-g-action="navigate" data-g-event="Footer" data-g-label="Careers" href=
+        "../loon/careers/">Careers</a>
+      </li>
+    </ul>-->
+    <ul class="social">
+      <li>
+        <a data-g-action="social" data-g-event="Footer" data-g-label="Follow us on Facebook" href=
+        "https://plus.google.com/+ProjectLoon" rel="publisher" target="_blank">Facebook</a>
+      </li>
+    </ul>
     </div>
 
 
@@ -82,7 +109,9 @@
         <script src="scripts/controllers/programacao.js"></script>
         <script src="scripts/controllers/local.js"></script>
         <script src="scripts/controllers/all.js"></script>
-        <script src="scripts/directives/detectactivetab.js"></script>
+        <script src="scripts/services/palestrantes.js"></script>
         <!-- endbuild -->
+    <script src="js/main.js">
+    </script>
 </body>
 </html>
