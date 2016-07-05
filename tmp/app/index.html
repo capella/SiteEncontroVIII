@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      VIII Encontro do BCC
+    </title>
+    <meta content="Informações sobre o encontro do BCC" name="description">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link href="styles/bcc.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <!-- endbuild -->
+  </head>
+  <body ng-app="tmpApp"  ng-controller="AllCtrl">
+
+    <div class="header" role="banner">
+      <h1>
+        <a data-g-action="navigate" data-g-event="Global Nav" data-g-label="Project Loon" href=
+        "../loon/">VIII Encontro do BCC</a>
+      </h1>
+      <div class="nav" role="navigation">
+        <ul class="sitemap" ng-app="link">
+
+          <li ng-class="{active: act('/')}">
+            <a href="#/" ng-if="!act('/')">O Encontro</a>
+            <em ng-if="act('/')">O Encontro</em>
+          </li>
+
+          <li ng-class="{active: act('/palestrantes')}">
+            <a href="#/palestrantes" ng-if="!act('/palestrantes')"> Palestrantes</a>
+            <em ng-if="act('/palestrantes')"> Palestrantes</em>
+          </li>
+
+          <li ng-class="{active: act('/programacao')}">
+            <a href="#/programacao" ng-if="!act('/programacao')">Programação</a>
+            <em ng-if="act('/programacao')">Programação</em>
+          </li>
+
+          <li ng-class="{active: act('/local')}">
+            <a href="#/local" ng-if="!act('/local')">Local</a>
+            <em ng-if="act('/local')">Local</em>
+          </li>
+
+
+        </ul>
+        
+      </div>
+    </div>
+    <div class="main" role="main">
+      {{$route.current.activetab}}
+      <div ng-view=""></div>
+    </div>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/palestrantes.js"></script>
+        <script src="scripts/controllers/programacao.js"></script>
+        <script src="scripts/controllers/local.js"></script>
+        <script src="scripts/controllers/all.js"></script>
+        <script src="scripts/directives/detectactivetab.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

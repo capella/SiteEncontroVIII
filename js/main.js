@@ -2853,45 +2853,6 @@
     }
 
     function kf(a) {
-        var b = a.dc,
-            c = Q(a),
-            d = a.A().id,
-            e = "Module: Pagination" + (d && " - " + d);
-        c.c(a, "clickprev", r(function() {
-            b.trackEvent(e, "Button: Prev", "Page " + (X(this) + 1));
-            this.D && b.trackEvent(e, "Button: Prev (Flipped)", "Page " + (X(this) + 1))
-        }, a));
-        c.c(a, "clicknext", r(function() {
-            b.trackEvent(e, "Button: Next", "Page " + (X(this) + 1));
-            this.D && b.trackEvent(e, "Button: Next (Flipped)", "Page " + (X(this) + 1))
-        }, a));
-        c.c(a, "clickdot", r(function() {
-            b.trackEvent(e, "Button: Dot", "Page " + (X(this) + 1))
-        }, a));
-        c.c(a, "keyprev", r(function() {
-            b.trackEvent(e,
-                "Keyboard: Prev", "Page " + (X(this) + 1));
-            this.D && b.trackEvent(e, "Keyboard: Prev (Flipped)", "Page " + (X(this) + 1))
-        }, a));
-        c.c(a, "keynext", r(function() {
-            b.trackEvent(e, "Keyboard: Next", "Page " + (X(this) + 1));
-            this.D && b.trackEvent(e, "Keyboard: Next (Flipped)", "Page " + (X(this) + 1))
-        }, a));
-        a.oa() && (c.c(a, "swipe", r(function() {
-            b.trackEvent(e, "Swipe", "Page " + (X(this) + 1));
-            this.D && b.trackEvent(e, "Swipe (Flipped)", "Page " + (X(this) + 1))
-        }, a)), c.c(a, "swipeprev", r(function() {
-            b.trackEvent(e, "Swipe: Prev", "Page " + (X(this) + 1));
-            this.D &&
-                b.trackEvent(e, "Swipe: Prev (Flipped)", "Page " + (X(this) + 1))
-        }, a)), c.c(a, "swipenext", r(function() {
-            b.trackEvent(e, "Swipe: Next", "Page " + (X(this) + 1));
-            this.D && b.trackEvent(e, "Swipe: Next (Flipped)", "Page " + (X(this) + 1))
-        }, a)));
-        c.c(a, "flip", r(function() {
-            b.trackEvent(e, "Page Flip", "Page " + (X(this) + 1));
-            this.D && b.trackEvent(e, "Page Flip (Flipped)", "Page " + (X(this) + 1))
-        }, a))
     }
 
     function mf(a, b, c, d) {
@@ -3908,9 +3869,6 @@
         SCROLL.init();
         scrollChange($(window).scrollTop());
         $(window).resize()
-    });
-    $(window).load(function() {
-        $("#stars-1, #stars-2").height($("body").height() - 550)
     });
     $(window).resize(function() {
         getWidthHeight();
