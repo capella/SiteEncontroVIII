@@ -8,11 +8,7 @@
  * Controller of the tmpApp
  */
 angular.module('tmpApp')
-  .controller('MainCtrl', function ($scope, $route) {
+  .controller('MainCtrl', function ($scope, $route, palestrantes) {
   	$scope.$route = $route;
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.palestrantes = palestrantes.all();
   });

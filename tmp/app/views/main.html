@@ -31,9 +31,9 @@
   <div class="cols">
     <div class="col">
       <ul>
-        <li><a href=""></a></li>
-        <li>Tea</li>
-        <li>Milk</li>
+        <li ng-repeat="palestrante in palestrantes">
+          <a href="#/palestrantes/{{palestrante.id}}" style="text-decoration: none;">{{palestrante.title}}</a>
+        </li>
       </ul>
     </div>
     <div class="col">
