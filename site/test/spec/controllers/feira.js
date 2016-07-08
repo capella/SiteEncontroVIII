@@ -17,7 +17,4 @@ describe('Controller: FeiraCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(FeiraCtrl.awesomeThings.length).toBe(3);
-  });
 });

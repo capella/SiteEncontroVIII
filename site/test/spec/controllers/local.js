@@ -17,7 +17,4 @@ describe('Controller: LocalCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(LocalCtrl.awesomeThings.length).toBe(3);
-  });
 });

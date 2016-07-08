@@ -17,7 +17,4 @@ describe('Controller: AllCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(AllCtrl.awesomeThings.length).toBe(3);
-  });
 });

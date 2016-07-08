@@ -1,4 +1,4 @@
-// Generated on 2016-07-05 using generator-angular 0.15.1
+// Generated on 2015-08-03 using generator-angular 0.12.1
 'use strict';
 
 // # Globbing
@@ -39,18 +39,18 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all', 'newer:jscs:all'],
+        tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'newer:jscs:test', 'karma']
+        tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'postcss']
+        tasks: ['newer:copy:styles', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -82,8 +82,8 @@ module.exports = function (grunt) {
             return [
               connect.static('.tmp'),
               connect().use(
-                '/app/bower_components',
-                connect.static('./app/bower_components')
+                '/bower_components',
+                connect.static('./bower_components')
               ),
               connect().use(
                 '/app/styles',
@@ -102,8 +102,8 @@ module.exports = function (grunt) {
               connect.static('.tmp'),
               connect.static('test'),
               connect().use(
-                '/app/bower_components',
-                connect.static('./app/bower_components')
+                '/bower_components',
+                connect.static('./bower_components')
               ),
               connect.static(appConfig.app)
             ];
@@ -118,7 +118,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Make sure there are no obvious mistakes
+    // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -134,23 +134,6 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'test/.jshintrc'
         },
-        src: ['test/spec/{,*/}*.js']
-      }
-    },
-
-    // Make sure code styles are up to par
-    jscs: {
-      options: {
-        config: '.jscsrc',
-        verbose: true
-      },
-      all: {
-        src: [
-          'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
-        ]
-      },
-      test: {
         src: ['test/spec/{,*/}*.js']
       }
     },
@@ -171,15 +154,13 @@ module.exports = function (grunt) {
     },
 
     // Add vendor prefixed styles
-    postcss: {
+    autoprefixer: {
       options: {
-        processors: [
-          require('autoprefixer-core')({browsers: ['last 1 version']})
-        ]
+        browsers: ['last 1 version']
       },
       server: {
         options: {
-          map: true
+          map: true,
         },
         files: [{
           expand: true,
@@ -220,7 +201,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -324,7 +305,8 @@ module.exports = function (grunt) {
           collapseWhitespace: true,
           conservativeCollapse: true,
           collapseBooleanAttributes: true,
-          removeCommentsFromCDATA: true
+          removeCommentsFromCDATA: true,
+          removeComments: true
         },
         files: [{
           expand: true,
@@ -378,6 +360,7 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
+            '.htaccess',
             '*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*'
@@ -389,7 +372,7 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }, {
           expand: true,
-          cwd: 'app/bower_components/bootstrap/dist',
+          cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
         }]
@@ -423,7 +406,40 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    prettify: {
+      dist: {
+        options: {
+          "indent": 4,
+          "indent_scripts": "normal",
+          "wrap_line_length": 0,
+          "brace_style": "collapse",
+          "preserve_newlines": true,
+          "max_preserve_newlines": 1
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: '**/*.html',
+          dest: '<%= yeoman.app %>'
+        }]
+      } 
+    },
+
+    "jsbeautifier" : {
+      dist: {
+        options : {
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: '**/*.js',
+          dest: '<%= yeoman.app %>'
+        }]
+      }
     }
+
   });
 
 
@@ -436,9 +452,11 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
-      'postcss:server',
+      'autoprefixer:server',
       'connect:livereload',
-      'watch'
+      'watch',
+      'prettify',
+      'jsbeautifier'
     ]);
   });
 
@@ -451,9 +469,14 @@ module.exports = function (grunt) {
     'clean:server',
     'wiredep',
     'concurrent:test',
-    'postcss',
+    'autoprefixer',
     'connect:test',
     'karma'
+  ]);
+
+  grunt.registerTask('limpa', [
+      'prettify',
+      'jsbeautifier'
   ]);
 
   grunt.registerTask('build', [
@@ -461,7 +484,7 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
-    'postcss',
+    'autoprefixer',
     'ngtemplates',
     'concat',
     'ngAnnotate',
@@ -476,7 +499,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'newer:jscs',
     'test',
     'build'
   ]);
