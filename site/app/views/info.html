@@ -1,0 +1,19 @@
+<div class="section" style="padding-top: 15px;padding-bottom: 40px;">
+    <div class="panel-heading">
+    	<h3><i class="fa fa-fw fa-gift"></i><b>{{palestrante.nome_palestrante}}</b> <small>{{palestrante.title}} </small></h3> 
+	</div>
+	<div class="panel-body">
+        <div class="row">
+            <div class="col-md-2" style="padding-top: 5px;">
+                <img src="{{palestrante.image}}" style="width: 100%;" class="img-thumbnail" ng-show="palestrante.image!=''">
+            </div>
+            <div class="col-md-10">
+                <p style="text-align: justify;" ng-bind-html="palestrante.text_palesta"></p>
+                <p style="text-align: justify;"> 
+                	Início: <b>{{palestrante.start | date:'H:mm dd/MM/yyyy'}}</b><br> 
+                	Término: <b>{{palestrante.end | date:'H:mm dd/MM/yyyy'}}</b>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

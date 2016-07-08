@@ -1,0 +1,12 @@
+<div class="section" style="padding-top: 15px;padding-bottom: 40px;">
+    <div class="panel-heading">
+    	<h3>Programação</h3> 
+	</div>
+	<div class="panel-body" ng-repeat="palestrante in pale | orderBy:'start'">
+        <div class="col-md-10">
+            <p style="text-align: justify;"> 
+            	<a href="#/palestrantes/{{palestrante.id}}" style="text-decoration: initial;"><b>{{palestrante.start | date:'dd/MM/yyyy'}} {{palestrante.start | date:'H:mm'}}</b> - <b>{{palestrante.end | date:'H:mm'}}</b> {{palestrante.title}}, <small>{{palestrante.nome_palestrante}}</small></a>
+            </p>
+        </div>
+    </div>
+</div>
