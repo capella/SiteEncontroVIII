@@ -1,16 +1,25 @@
+<div class="page-header">
+    <h1>Palestrantes<small></small></h1>
+</div>
 <div class="section" ng-repeat="info in pale | orderBy:'nome_palestrante'" style="padding-top: 15px;padding-bottom: 40px;">
     <div class="panel-heading">
-    	<h3><i class="fa fa-fw fa-gift"></i><b>{{info.nome_palestrante}}</b> <small>{{info.title}} </small></h3> 
-	</div>
-	<div class="panel-body">
-        <div class="row">
-            <div class="col-md-2" style="padding-top: 5px;">
-                <img src="{{info.image}}" style="width: 100%;" class="img-thumbnail" ng-show="info.image!=''">
-            </div>
-            <div class="col-md-10">
-                <p style="text-align: justify;" ng-bind-html="info.text_pessoal"></p>
-                <a href="#/palestrantes/{{info.id}}" class="btn btn-default">Ler sobre palestra</a>
-            </div>
+        <h3><i class="fa fa-fw fa-gift"></i><b>{{info.nome_palestrante}}</b> <small>{{info.title}} </small></h3>
+    </div>
+    <div ng-cloak ng-show="info.image==''">
+        <p style="text-align: justify;" ng-bind-html="info.text_pessoal"></p>
+        <div ng-cloak class="ng-cloak" ng-show="info.text_pessoal == ''">
+            <p>Mais informações em breve.</p>
         </div>
     </div>
+    <div class="cols" ng-cloak ng-show="info.image!=''">
+        <div class="col col1">
+            <p style="text-align: justify;" ng-bind-html="info.text_pessoal"></p>
+            <div ng-cloak class="ng-cloak" ng-show="info.text_pessoal == ''">
+                <p>Mais informações em breve.</p>
+            </div>
+        </div>
+        <div class="col col2">
+            <img src="{{info.image}}" style="width: 80%;max-width: 350px;" class="img-thumbnail"> </div>
+    </div>
+    <a href="#/palestrantes/{{info.id}}" class="btn btn-default">Ler sobre palestra</a>
 </div>

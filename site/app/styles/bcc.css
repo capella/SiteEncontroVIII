@@ -163,8 +163,11 @@ projection {
         display: none
     }
     a {
-        color: #fff;
-        text-decoration: underline
+        color: #eee;
+        text-decoration: none;
+    }
+    a li {
+        letter-spacing: -1.5px;
     }
     a:visited {
         color: rgba(255, 255, 255, .8)
@@ -1070,8 +1073,8 @@ projection {
 print,
 projection {
     html {
-        background: #0b061c url(../images/sky.jpg) repeat-x center bottom;
-        background: url(../images/sky-noise.png), #0b061c url(../images/sky.jpg) repeat-x;
+        background: #0b061c url(../images/sk.png) repeat-x center bottom;
+        background: url(../images/sky-noise.png), #0b061c url(../images/sk.png) repeat-x;
         -webkit-background-size: auto, 100% 100%;
         background-size: auto, 100% 100%;
         background-position: left top;
@@ -1342,7 +1345,7 @@ projection {
     .main {
         max-width: 960px;
         margin: auto;
-        padding: 160px 0 0;
+        padding: 100px 0 0;
         position: relative;
         text-align: center;
         z-index: 90
@@ -1385,6 +1388,13 @@ projection {
         margin: 0 3.125%;
         text-align: left;
         width: 43.75%
+    }
+    .col1 {
+        width: 63.75%;
+    }
+
+    .col2 {
+        width: 23.75%;
     }
     [dir=rtl] .col {
         float: right;

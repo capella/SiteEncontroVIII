@@ -17,47 +17,51 @@
  */
 /* global google */
 (function() {
-  'use strict';
+    'use strict';
 
-  var placesAutoComplete = function(Attr2MapOptions, $timeout) {
-    var parser = Attr2MapOptions;
+    var placesAutoComplete = function(Attr2MapOptions, $timeout) {
+        var parser = Attr2MapOptions;
 
-    var linkFunc = function(scope, element, attrs, ngModelCtrl) {
-      if (attrs.placesAutoComplete ==='false') {
-        return false;
-      }
-      var filtered = parser.filter(attrs);
-      var options = parser.getOptions(filtered, {scope: scope});
-      var events = parser.getEvents(scope, filtered);
-      var autocomplete = new google.maps.places.Autocomplete(element[0], options);
-      for (var eventName in events) {
-        google.maps.event.addListener(autocomplete, eventName, events[eventName]);
-      }
+        var linkFunc = function(scope, element, attrs, ngModelCtrl) {
+            if (attrs.placesAutoComplete === 'false') {
+                return false;
+            }
+            var filtered = parser.filter(attrs);
+            var options = parser.getOptions(filtered, {
+                scope: scope
+            });
+            var events = parser.getEvents(scope, filtered);
+            var autocomplete = new google.maps.places.Autocomplete(element[0], options);
+            for (var eventName in events) {
+                google.maps.event.addListener(autocomplete, eventName, events[eventName]);
+            }
 
-      var updateModel = function() {
-        $timeout(function(){
-          ngModelCtrl && ngModelCtrl.$setViewValue(element.val());
-        },100);
-      };
-      google.maps.event.addListener(autocomplete, 'place_changed', updateModel);
-      element[0].addEventListener('change', updateModel);
+            var updateModel = function() {
+                $timeout(function() {
+                    ngModelCtrl && ngModelCtrl.$setViewValue(element.val());
+                }, 100);
+            };
+            google.maps.event.addListener(autocomplete, 'place_changed', updateModel);
+            element[0].addEventListener('change', updateModel);
 
-      attrs.$observe('types', function(val) {
-        if (val) {
-          var optionValue = parser.toOptionValue(val, {key: 'types'});
-          autocomplete.setTypes(optionValue);
-        }
-      });
+            attrs.$observe('types', function(val) {
+                if (val) {
+                    var optionValue = parser.toOptionValue(val, {
+                        key: 'types'
+                    });
+                    autocomplete.setTypes(optionValue);
+                }
+            });
+        };
+
+        return {
+            restrict: 'A',
+            require: '?ngModel',
+            link: linkFunc
+        };
     };
 
-    return {
-      restrict: 'A',
-      require: '?ngModel',
-      link: linkFunc
-    };
-  };
-
-  placesAutoComplete.$inject = ['Attr2MapOptions', '$timeout'];
-  angular.module('ngMap').directive('placesAutoComplete', placesAutoComplete);
+    placesAutoComplete.$inject = ['Attr2MapOptions', '$timeout'];
+    angular.module('ngMap').directive('placesAutoComplete', placesAutoComplete);
 
 })();

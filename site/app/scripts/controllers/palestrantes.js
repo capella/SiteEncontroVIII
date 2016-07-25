@@ -8,7 +8,7 @@
  * Controller of the tmpApp
  */
 angular.module('tmpApp')
-  .controller('PalestrantesCtrl', function ($scope, $route, Palestrantes) {
-  	$scope.$route = $route;
-    $scope.pale = Palestrantes.all();
-  });
+    .controller('PalestrantesCtrl', function($scope, $route, Palestrantes) {
+        $scope.$route = $route;
+        $scope.pale = Palestrantes.all();
+    });

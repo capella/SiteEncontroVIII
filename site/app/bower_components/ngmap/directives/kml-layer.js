@@ -26,40 +26,44 @@
  * </map>
  */
 (function() {
-  'use strict';
+    'use strict';
 
-  angular.module('ngMap').directive('kmlLayer', [
-    'Attr2MapOptions', function(Attr2MapOptions) {
-    var parser = Attr2MapOptions;
+    angular.module('ngMap').directive('kmlLayer', [
+        'Attr2MapOptions',
+        function(Attr2MapOptions) {
+            var parser = Attr2MapOptions;
 
-    var getKmlLayer = function(options, events) {
-      var kmlLayer = new google.maps.KmlLayer(options);
-      for (var eventName in events) {
-        google.maps.event.addListener(kmlLayer, eventName, events[eventName]);
-      }
-      return kmlLayer;
-    };
+            var getKmlLayer = function(options, events) {
+                var kmlLayer = new google.maps.KmlLayer(options);
+                for (var eventName in events) {
+                    google.maps.event.addListener(kmlLayer, eventName, events[eventName]);
+                }
+                return kmlLayer;
+            };
 
-    return {
-      restrict: 'E',
-      require: ['?^map','?^ngMap'],
+            return {
+                restrict: 'E',
+                require: ['?^map', '?^ngMap'],
 
-      link: function(scope, element, attrs, mapController) {
-        mapController = mapController[0]||mapController[1];
+                link: function(scope, element, attrs, mapController) {
+                    mapController = mapController[0] || mapController[1];
 
-        var orgAttrs = parser.orgAttributes(element);
-        var filtered = parser.filter(attrs);
-        var options = parser.getOptions(filtered, {scope: scope});
-        var events = parser.getEvents(scope, filtered);
-        console.log('kml-layer options', options, 'events', events);
+                    var orgAttrs = parser.orgAttributes(element);
+                    var filtered = parser.filter(attrs);
+                    var options = parser.getOptions(filtered, {
+                        scope: scope
+                    });
+                    var events = parser.getEvents(scope, filtered);
+                    console.log('kml-layer options', options, 'events', events);
 
-        var kmlLayer = getKmlLayer(options, events);
-        mapController.addObject('kmlLayers', kmlLayer);
-        mapController.observeAttrSetObj(orgAttrs, attrs, kmlLayer);  //observers
-        element.bind('$destroy', function() {
-          mapController.deleteObject('kmlLayers', kmlLayer);
-        });
-      }
-     }; // return
-  }]);
+                    var kmlLayer = getKmlLayer(options, events);
+                    mapController.addObject('kmlLayers', kmlLayer);
+                    mapController.observeAttrSetObj(orgAttrs, attrs, kmlLayer); //observers
+                    element.bind('$destroy', function() {
+                        mapController.deleteObject('kmlLayers', kmlLayer);
+                    });
+                }
+            }; // return
+        }
+    ]);
 })();

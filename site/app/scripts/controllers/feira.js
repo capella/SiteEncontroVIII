@@ -8,10 +8,10 @@
  * Controller of the tmpApp
  */
 angular.module('tmpApp')
-  .controller('FeiraCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('FeiraCtrl', function() {
+        this.awesomeThings = [
+            'HTML5 Boilerplate',
+            'AngularJS',
+            'Karma'
+        ];
+    });

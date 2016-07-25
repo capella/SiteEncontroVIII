@@ -35,64 +35,64 @@
  */
 /* global window, document */
 (function() {
-  'use strict';
-  var $timeout, $compile, src, savedHtml;
+    'use strict';
+    var $timeout, $compile, src, savedHtml;
 
-  var preLinkFunc = function(scope, element, attrs) {
-    var mapsUrl = attrs.mapLazyLoadParams || attrs.mapLazyLoad;
+    var preLinkFunc = function(scope, element, attrs) {
+        var mapsUrl = attrs.mapLazyLoadParams || attrs.mapLazyLoad;
 
-    window.lazyLoadCallback = function() {
-      console.log('Google maps script loaded:', mapsUrl);
-      $timeout(function() { /* give some time to load */
-        element.html(savedHtml);
-        $compile(element.contents())(scope);
-      }, 100);
-    };
+        window.lazyLoadCallback = function() {
+            console.log('Google maps script loaded:', mapsUrl);
+            $timeout(function() { /* give some time to load */
+                element.html(savedHtml);
+                $compile(element.contents())(scope);
+            }, 100);
+        };
 
-    if(window.google === undefined || window.google.maps === undefined) {
-      var scriptEl = document.createElement('script');
-      console.log('Prelinking script loaded,' + src);
+        if (window.google === undefined || window.google.maps === undefined) {
+            var scriptEl = document.createElement('script');
+            console.log('Prelinking script loaded,' + src);
 
-      scriptEl.src = mapsUrl +
-        (mapsUrl.indexOf('?') > -1 ? '&' : '?') +
-        'callback=lazyLoadCallback';
+            scriptEl.src = mapsUrl +
+                (mapsUrl.indexOf('?') > -1 ? '&' : '?') +
+                'callback=lazyLoadCallback';
 
-        if (!document.querySelector('script[src="' + scriptEl.src + '"]')) {
-          document.body.appendChild(scriptEl);
+            if (!document.querySelector('script[src="' + scriptEl.src + '"]')) {
+                document.body.appendChild(scriptEl);
+            }
+        } else {
+            element.html(savedHtml);
+            $compile(element.contents())(scope);
         }
-    } else {
-      element.html(savedHtml);
-      $compile(element.contents())(scope);
-    }
-  };
-
-  var compileFunc = function(tElement, tAttrs) {
-
-    (!tAttrs.mapLazyLoad) && console.error('requires src with map-lazy-load');
-    savedHtml = tElement.html();
-    src = tAttrs.mapLazyLoad;
-
-    /**
-     * if already loaded, stop processing it
-     */
-    if(window.google !== undefined && window.google.maps !== undefined) {
-      return false;
-    }
-
-    tElement.html('');  // will compile again after script is loaded
-
-    return {
-      pre: preLinkFunc
     };
-  };
 
-  var mapLazyLoad = function(_$compile_, _$timeout_) {
-    $compile = _$compile_, $timeout = _$timeout_;
-    return {
-      compile: compileFunc
+    var compileFunc = function(tElement, tAttrs) {
+
+        (!tAttrs.mapLazyLoad) && console.error('requires src with map-lazy-load');
+        savedHtml = tElement.html();
+        src = tAttrs.mapLazyLoad;
+
+        /**
+         * if already loaded, stop processing it
+         */
+        if (window.google !== undefined && window.google.maps !== undefined) {
+            return false;
+        }
+
+        tElement.html(''); // will compile again after script is loaded
+
+        return {
+            pre: preLinkFunc
+        };
     };
-  };
-  mapLazyLoad.$inject = ['$compile','$timeout'];
 
-  angular.module('ngMap').directive('mapLazyLoad', mapLazyLoad);
+    var mapLazyLoad = function(_$compile_, _$timeout_) {
+        $compile = _$compile_, $timeout = _$timeout_;
+        return {
+            compile: compileFunc
+        };
+    };
+    mapLazyLoad.$inject = ['$compile', '$timeout'];
+
+    angular.module('ngMap').directive('mapLazyLoad', mapLazyLoad);
 })();

@@ -8,6 +8,6 @@
  * Controller of the tmpApp
  */
 angular.module('tmpApp')
-  .controller('InfoCtrl', function ($scope, $routeParams, Palestrantes) {
-    $scope.palestrante = Palestrantes.id($routeParams.id);
-  });
+    .controller('InfoCtrl', function($scope, $routeParams, Palestrantes) {
+        $scope.palestrante = Palestrantes.id($routeParams.id);
+    });

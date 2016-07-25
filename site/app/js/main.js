@@ -1,13 +1,16 @@
-
 var map;
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
+        center: {
+            lat: -34.397,
+            lng: 150.644
+        },
+        zoom: 8
     });
 }
 
-$(".nav a").click(function(){
+$(".nav a").click(function() {
     $(".nav").removeClass("active");
 });
 
@@ -1364,7 +1367,7 @@ $(".nav a").click(function(){
                     var f = b[a];
                     f && f.xa == c && !f.ta && (f = Sc(f, d), e = e && !1 !== f)
                 }
-            return e
+        return e
     }
 
     function Sc(a, b) {
@@ -2866,8 +2869,7 @@ $(".nav a").click(function(){
         a.b && (a.b.stop(), a.b.start())
     }
 
-    function kf(a) {
-    }
+    function kf(a) {}
 
     function mf(a, b, c, d) {
         switch (!0) {
@@ -3808,16 +3810,16 @@ $(".nav a").click(function(){
             bg = new Image;
             //bg.onload = function() {
             //    setTimeout(function() {
-                    curOffset =
-                        $(window).scrollTop();
-                    ready = true;
-                    self.resize();
-                    setTimeout(function() {
-                        self.resize()
-                    }, 1E3)
-            //    }, 0)
-            //};
-            //bg.src = "images/sky.jpg"
+            curOffset =
+                $(window).scrollTop();
+            ready = true;
+            self.resize();
+            setTimeout(function() {
+                    self.resize()
+                }, 1E3)
+                //    }, 0)
+                //};
+                //bg.src = "images/sky.jpg"
         };
         self.render = function() {
             if (curOffset != Math.abs($(window).scrollTop())) curOffset = Math.abs($(window).scrollTop());
@@ -3864,7 +3866,7 @@ $(".nav a").click(function(){
     var lastScroll = 0;
     var prevTouch = 0;
 
-    
+
     $(document).ready(function() {
         getWidthHeight();
         animate();

@@ -51,17 +51,17 @@
  *   <map geo-fallback-center="[40.74, -74.18]" zoom-to-inlude-markers="true">
  *   </map>
  */
-(function () {
-  'use strict';
+(function() {
+    'use strict';
 
-  var mapDirective = function () {
-    return {
-      restrict: 'AE',
-      controller: '__MapController',
-      controllerAs: 'ngmap'
+    var mapDirective = function() {
+        return {
+            restrict: 'AE',
+            controller: '__MapController',
+            controllerAs: 'ngmap'
+        };
     };
-  };
 
-  angular.module('ngMap').directive('map', [mapDirective]);
-  angular.module('ngMap').directive('ngMap', [mapDirective]);
+    angular.module('ngMap').directive('map', [mapDirective]);
+    angular.module('ngMap').directive('ngMap', [mapDirective]);
 })();
