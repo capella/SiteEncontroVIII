@@ -10,6 +10,7 @@
  */
 angular
     .module('tmpApp', [
+        'angular-loading-bar',
         'ngAnimate',
         'ngCookies',
         'ngResource',

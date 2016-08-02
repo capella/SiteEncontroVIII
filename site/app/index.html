@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
@@ -16,12 +17,10 @@
         <link href="styles/bcc.css" rel="stylesheet">
         <!-- endbuild -->
     </head>
-    <body ng-app="tmpApp" ng-controller="AllCtrl">
-        <div class="header" role="banner">
+    <body ng-app="tmpApp">
+        <div class="header" role="banner" class="ng-cloak">
             <h1>
-        <a href=
-        "#/">VIII Encontro do BCC</a>
-      </h1>
+        <a href="#/">VIII Encontro do BCC</a></h1>
             <div class="nav" role="navigation">
                 <ul class="sitemap" ng-app="link">
                     <li ng-class="{active: act('/')}">
@@ -29,29 +28,29 @@
                         <em ng-cloak class="ng-cloak" ng-hide="!act('/')">O Encontro</em>
                     </li>
                     <li ng-class="{active: act('/palestrantes')}">
-                        <a href="#/palestrantes" ng-hide="act('/palestrantes')"> Palestrantes</a>
+                        <a href="#/palestrantes" class="ng-cloak" ng-hide="act('/palestrantes')"> Palestrantes</a>
                         <em ng-cloak class="ng-cloak" ng-hide="!act('/palestrantes')"> Palestrantes</em>
                     </li>
                     <li ng-class="{active: act('/programacao')}">
-                        <a href="#/programacao" ng-hide="act('/programacao')">Programação</a>
+                        <a href="#/programacao" class="ng-cloak" ng-hide="act('/programacao')">Programação</a>
                         <em ng-cloak class="ng-cloak" ng-hide="!act('/programacao')">Programação</em>
                     </li>
                     <li ng-class="{active: act('/feira')}">
-                        <a href="#/feira" ng-hide="act('/feira')">Feira de Livros</a>
+                        <a href="#/feira" class="ng-cloak" ng-hide="act('/feira')">Feira de Livros</a>
                         <em ng-cloak class="ng-cloak" ng-hide="!act('/feira')">Feira de Livros</em>
                     </li>
                     <li ng-class="{active: act('/local')}">
-                        <a href="#/local" ng-hide="act('/local')">Local</a>
+                        <a href="#/local" class="ng-cloak" ng-hide="act('/local')">Local</a>
                         <em ng-cloak ng-hide="!act('/local')">Local</em>
                     </li>
                     <li ng-class="{active: act('/historia')}">
-                        <a href="#/historia" ng-hide="act('/historia')">História</a>
+                        <a href="#/historia" class="ng-cloak" ng-hide="act('/historia')">História</a>
                         <em ng-cloak class="ng-cloak" ng-hide="!act('/historia')">História</em>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="main" role="main">
+        <div class="main" role="main" class="ng-cloak">
             {{$route.current.activetab}}
             <div ng-view="" autoscroll="true"></div>
             <div class="ending">
@@ -94,6 +93,7 @@
             <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
             <script src="bower_components/angular-touch/angular-touch.js"></script>
             <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+            <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
             <!-- endbower -->
             <!-- endbuild -->
             <!-- build:js scripts/tmp.js -->

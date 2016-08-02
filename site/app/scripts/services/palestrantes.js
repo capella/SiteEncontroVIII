@@ -28,22 +28,22 @@ angular.module('tmpApp')
             text_palesta: "Atacantes racionais não atacam criptografia diretamente, buscando sempre contorná-la. Há inúmeros pontos em que técnicas criptográficas falham na prática, desde geração/distribuição insegura de chaves criptográficas e escolha inadequada de algoritmos/parâmetros, até o vazamento de informação crítica por canais laterais. Nessa palestra, serão discutidas formas de se explorar algumas dessas vulnerabilidades, ilustradas com casos reais do Brasil e do mundo.",
             id: 2
         }, {
-            title: "Teoria dos Jogos",
+            title: "Introdução à Teoria dos Jogos Algorítmica",
             nome_palestrante: "Prof. Rafael",
             start: new Date(2016, 7, 23, 14),
             end: new Date(2016, 7, 23, 14, 50),
-            image: "",
-            text_pessoal: "",
-            text_palesta: "",
+            image: "images/5.png",
+            text_pessoal: "Rafael C. S. Schouery é Doutor em Ciência da Computação (2014) e Bacharel em Ciência da Computação pelo Instituto de Matemática e Estatística da Universidade de São Paulo, bem como Técnico em Informática (2003) pelo Colégio Técnico Industrial da Universidade Estadual Paulista. Atualmente é Professor em Regime de Dedicação Integral à Docência e à Pesquisa no Instituto de Computação da Universidade Estadual de Campinas. Seus interesses de pesquisa se concentram na área de Teoria da Computação, com ênfase em Análise de Algoritmos e Complexidade de Computação, atuando principalmente nos seguintes temas: otimização combinatória, algoritmos de aproximação, algoritmos exatos, teoria dos jogos algorítmica e complexidade computacional. ",
+            text_palesta: "A Teoria dos Jogos Algorítmica aborda questões relevantes que combinam conceitos de economia com computação. Um dos seus objetivos é abordar problemas da computação, como problemas de otimização, do ponto de vista da Teoria dos Jogos, considerando que os participantes do sistema desejam maximizar o seu ganho ou minimizar o seu custo. Outro objetivo é considerar problemas de natureza econômica (como Leilões) do ponto de vista da Teoria da Computação. Essa apresentação introduzirá conceitos básicos da Teoria dos Jogos e da Teoria dos Jogos Algorítmica.",
             id: 5
         }, {
-            title: "História da Computação",
+            title: "Evolução dos computadores; do ábaco ao ENIAC ao Sunway",
             nome_palestrante: "Prof. Siang Wun Song",
             start: new Date(2016, 7, 22, 15),
             end: new Date(2016, 7, 22, 15, 50),
             image: "",
-            text_pessoal: "",
-            text_palesta: "",
+            text_pessoal: "Siang Wun Song é professor titular aposentado do Departamento de Ciência da Computação da Universidade de São Paulo, onde ele foi diretor do Instituto de Matemática e Estatística. Ele possui o título de doutor em Ciência da Computação pela Universidade Carnegie Mellon. Foi membro do corpo editorial de vários periódicos, como Parallel Computing, Parallel Processing Letters, e Journal of the Brazilian Computer Society. Ele é bolsista de produtividade em pesquisa do CNPq nível Sênior. Foi admitido em 2007 na Ordem Nacional do Mérito Científico, classe Comendador e em 2011 recebeu o Prêmio Mérito Científico da Sociedade Brasileira de Computação. Sua área de pesquisa é o projeto de algoritmos paralelos.",
+            text_palesta: "Sunway é o computador mais veloz do mundo hoje com mais de 10 milhões de processadores ou núcleos (cores). Desde a invenção do ábaco quase cinco mil anos atrás, um longo percurso foi necessário até chegarmos a este estágio. Apresentamos nesta palestra alguns marcos importantes nessa evolução. Curiosamente, o sistema binário já era conhecido há mais de três mil anos, embora não no contexto para computação. Máquinas de calcular mecânicas apareceram somente no século XVII. Com a invenção da válvula, apareceram os primeiros computadores eletrônicos durante a segunda grande guerra mundial. Daí passando de válvula a transistor e, finalmente, a fantástica tecnologia de microeletrônica (VLSI), foi possível chegar ao Sunway de hoje, anunciado em junho de 2016. Faremos no final uma breve apresentação do Sunway.",
             id: 6
         }, {
             title: "Máquina de Turing",
