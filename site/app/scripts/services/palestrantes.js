@@ -73,14 +73,32 @@ angular.module('tmpApp')
             text_palesta: "Escopo, aplicações e tendências na área de visão computacional.",
             id: 11
         }, {
-            title: "Deep Learning",
+            title: "Criando Computadores Socialmente Inteligentes",
             nome_palestrante: "Claudio Pinhaez",
             start: new Date(2016, 7, 24, 16, 30),
             end: new Date(2016, 7, 24, 18, 20),
+            image: "images/12.jpg",
+            text_pessoal: "Claudio Pinhanez é ciientista, professor, e inovador. É doutor pelo MIT Media Laboratory, onde estudou inteligência artificial e interfaces avançadas, e criou, em 1994, o primeiro blog da Internet em 1994. Fez bacharelado e mestrado no IME da Universidade de São Paulo. Claudio é pesquisador da IBM Research desde 1999, e hoje é o líder do grupo de pesquisa em Analítica de Dados Sociais do laboratório da IBM Research no Brasil. Claudio tem mais de 80 artigos publicados em jornais e conferências científicas, e mais de 20 patentes outorgadas nos Estados Unidos, Europa e Japão. Twitter: @cinhanez. Linkedin:",
+            text_palesta: "Nesta palestra é explorada a questão de como construir computadores tenham capacidades de inteligência social. Dentro de uma abordagem de Computação Cognitiva, são apresentadas e discutidas tecnologias para o entendimento do universo de mídias sociais, da análise de redes profissionais, e para o estabelecimento de diálogos com usuários. Os desafios de construir máquinas socialmente competentes são exemplificados através de aplicações em TV e mídia, saúde, e aconselhamento financeiro.",
+            id: 12
+        }, {
+            title: "Internet das Coisas",
+            nome_palestrante: "Daniel Fuchs",
+            start: new Date(2016, 7, 22, 17, 30),
+            end: new Date(2016, 7, 22, 18, 20),
             image: "",
             text_pessoal: "",
             text_palesta: "",
-            id: 12
+            id: 13
+        }, {
+            title: "Marco Civil",
+            nome_palestrante: "Demi Getschko",
+            start: new Date(2016, 7, 23, 16, 30),
+            end: new Date(2016, 7, 23, 18, 20),
+            image: "images/14.jpg",
+            text_pessoal: "Engenheiro eletricista formado pela POLI/USP, com mestrado e doutorado em Engenharia, é Conselheiro do CGI.br (Comitê Gestor da Internet no Brasil), Diretor-Presidente do NIC.br (Núcleo de Informação e Coordenação do Ponto br) e Professor Associado da PUC (Pontifícia Universidade Católica de São Paulo).  Foi membro da diretoria da ICANN (Internet Corporation for Assigned Names and Numbers) pela ccNSO (Country Code Names Support Organization). Em abril de 2014 foi eleito para o Hall da Fama da Internet para a categoria “Conectores Globais”, com cerimônia realizada em Hong Kong. Em julho do mesmo ano foi agraciado com o prêmio “Cristina Tavares”, da Sociedade Brasileira de Computação. Em dezembro, no dia do Engenheiro, recebeu do Sindicato dos Engenheiros no Estado de São Paulo o prêmio “Personalidade da Tecnologia 2014”, na categoria “Internet”.",
+            text_palesta: "",
+            id: 14
         }];
 
         return {
