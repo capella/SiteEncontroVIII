@@ -1160,7 +1160,7 @@ projection {
     .nav {
         margin: 0 0 0 145px;
         text-align: center;
-        margin-right: 20%;
+        margin-right: 15%;
     }
     [dir=rtl] .nav {
         margin: 0 -145px 0 0

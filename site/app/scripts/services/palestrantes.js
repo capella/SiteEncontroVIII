@@ -86,8 +86,8 @@ angular.module('tmpApp')
             nome_palestrante: "Daniel Fuchs",
             start: new Date(2016, 7, 22, 17, 30),
             end: new Date(2016, 7, 22, 18, 20),
-            image: "",
-            text_pessoal: "",
+            image: "images/13.jpg",
+            text_pessoal: "Daniel Tibor Fuchs é um empreendedor natural, como Head of Innovation & fundador da Datora Telecom, uma operadora de telecomunicações especializada em prover serviços de voz, dados e mensageria para dezenas de operadoras no Brasil e no mundo, trouxe a tecnologia de Voz sobre IP pela primeira vez no Brasil, ainda em 1996. Desde 2010, também é responsável por Inovação na primeira MVNA no Brasil, formada inicialmente como Datora Mobile e que carrega hoje o nome Vodafone no país, dentro das funções de MVNO totalmente focada no segmento de IoT.<br>Graduado em Ciência da Computação e MBA em Marketing no Insper, temo como missão primária a busca constante pela renovação da estratégia do Grupo Datora Telecom, bem como a concepção de novos produtos e serviços com base nas mais avançadas tendências tecnológicas",
             text_palesta: "",
             id: 13
         }, {
@@ -99,6 +99,51 @@ angular.module('tmpApp')
             text_pessoal: "Engenheiro eletricista formado pela POLI/USP, com mestrado e doutorado em Engenharia, é Conselheiro do CGI.br (Comitê Gestor da Internet no Brasil), Diretor-Presidente do NIC.br (Núcleo de Informação e Coordenação do Ponto br) e Professor Associado da PUC (Pontifícia Universidade Católica de São Paulo).  Foi membro da diretoria da ICANN (Internet Corporation for Assigned Names and Numbers) pela ccNSO (Country Code Names Support Organization). Em abril de 2014 foi eleito para o Hall da Fama da Internet para a categoria “Conectores Globais”, com cerimônia realizada em Hong Kong. Em julho do mesmo ano foi agraciado com o prêmio “Cristina Tavares”, da Sociedade Brasileira de Computação. Em dezembro, no dia do Engenheiro, recebeu do Sindicato dos Engenheiros no Estado de São Paulo o prêmio “Personalidade da Tecnologia 2014”, na categoria “Internet”.",
             text_palesta: "",
             id: 14
+        }, {
+            title: "P vs. NP",
+            nome_palestrante: "Prof. Paulo Feofiloff",
+            start: new Date(2016, 7, 25, 14),
+            end: new Date(2016, 7, 25, 14, 50),
+            image: "images/15.jpg",
+            text_pessoal: "Paulo Feofiloff concluiu o curso de engenharia eletrônica na Escola Politécnica da USP em 1969, concluiu o mestrado em matemática aplicada no IME em 1974, e obteve o título de Ph.D. em combinatória e otimização na Universidade de Waterloo (Canadá) em 1983. Foi professor no IME, onde lecionou disciplinas de graduação e pós-gradução em Análise de Algoritmos, Teoria dos Grafos, Estruturas de Dados, e Otimização Combinatória. Foi chefe dos Departamentos de Matemática Aplicada e Ciência da Computação do IME e diretor do Departamento de Informática da USP. Atualmente é professor sênior (mais conhecido como aposentado) no IME.",
+            text_palesta: "P vs. NP é uma questão fundamental na teoria da computação. P é a classe dos problemas fáceis e NP a classe dos problemas razoáveis. Essas definições envolvem o conceito de algoritmos escaláveis (ou seja, rápidos) e a diferença entre verificar e encontrar a solução de um problema.<br>A relação entre P e NP pode ser resumida na pergunta É verdade que todo problema razoável é fácil?. Você ganha 1 milhão de dólares se provar que a resposta é SIM ou provar que a resposta é NÃO!<br>O ponto alto dessa teoria é a existência de problemas em NP que, embora pareçam simples e corriqueiros, englobam todos os outros. Quais as implicações práticas da existência desses superproblemas?",
+            id: 15
+        }, {
+            title: "Computação Quântica",
+            nome_palestrante: "Professores Cris e Gubi",
+            start: new Date(2016, 7, 23, 15),
+            end: new Date(2016, 7, 23, 15, 50),
+            image: "",
+            text_pessoal: "",
+            text_palesta: "",
+            id: 16
+        }, {
+            title: "Workshop Hackathon",
+            nome_palestrante: "Renato Cordeiro Ferreira",
+            start: new Date(2016, 7, 25, 16, 30),
+            end: new Date(2016, 7, 25, 18, 20),
+            image: "",
+            text_pessoal: "",
+            text_palesta: "",
+            id: 17
+        }, {
+            title: "Conversa com os professores do DCC",
+            nome_palestrante: "Alunos da Graduação e Professores",
+            start: new Date(2016, 7, 26, 14),
+            end: new Date(2016, 7, 26, 18),
+            image: "",
+            text_pessoal: ".",
+            text_palesta: "Você já pensou em participar de uma roda de conversa com diversos professores e alunos de todos os anos da graduação de departamento de ciências da computação? Pensa em fazer uma iniciação científica mas o professor da sua área de interesse é um mistério e você gostaria de conhercê-lo? <br> Esse evento é feito para isso. Todos os alunos e professores estão convidados para esse debate. Oportunidade única para saber o que ambos pensam e falam.",
+            id: 18
+        }, {
+            title: "Palestra Ensino Médio",
+            nome_palestrante: "Alunos da Graduação",
+            start: new Date(2016, 7, 19, 15),
+            end: new Date(2016, 7, 19, 17, 20),
+            image: "",
+            text_pessoal: ".",
+            text_palesta: "Sabe a diferença de Ciências da Computação, Sistema da Informação ou Engenharia da Computação? Se não sabe, mas tem interesse em alguns desses cursos, compareça nessa evento. Nesse dia vamos receber alunos do ensino médio e vamos apresentar o nosso curso a eles. Além disso, teremos espaço para dúvidas e uma roda de conversa. Sejam bem vindos ao IME.",
+            id: 19
         }];
 
         return {

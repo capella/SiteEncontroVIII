@@ -1,7 +1,7 @@
 <div class="page-header">
     <h1>Palestrantes<small></small></h1>
 </div>
-<div class="section" ng-repeat="info in pale | orderBy:'nome_palestrante'" style="padding-top: 15px;padding-bottom: 40px;">
+<div class="section" ng-repeat="info in pale | orderBy:'nome_palestrante'" style="padding-top: 15px;padding-bottom: 40px;" ng-show="info.text_pessoal != '.'">
     <div class="panel-heading">
         <h3><i class="fa fa-fw fa-gift"></i><b>{{info.nome_palestrante}}</b> <small>{{info.title}} </small></h3>
     </div>
