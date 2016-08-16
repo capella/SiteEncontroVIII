@@ -16,6 +16,10 @@
                     Início: <b>{{palestrante.start | date:'H:mm dd/MM/yyyy'}}</b>
                     <br> Término: <b>{{palestrante.end | date:'H:mm dd/MM/yyyy'}}</b>
                 </p>
+
+                <h5 ng-cloak class="ng-cloak" ng-show="palestrante.text_pessoal != '' && palestrante.text_pessoal != '.'">Sobre o Palestrante:</h5>
+                <p ng-cloak class="ng-cloak" ng-show="palestrante.text_pessoal != '' && palestrante.text_pessoal != '.'" style="text-align: justify;" ng-bind-html="palestrante.text_pessoal">
+                </p>
             </div>
         </div>
     </div>
