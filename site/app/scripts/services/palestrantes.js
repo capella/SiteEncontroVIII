@@ -46,7 +46,7 @@ angular.module('tmpApp')
             text_palesta: "Sunway é o computador mais veloz do mundo hoje com mais de 10 milhões de processadores ou núcleos (cores). Desde a invenção do ábaco quase cinco mil anos atrás, um longo percurso foi necessário até chegarmos a este estágio. Apresentamos nesta palestra alguns marcos importantes nessa evolução. Curiosamente, o sistema binário já era conhecido há mais de três mil anos, embora não no contexto para computação. Máquinas de calcular mecânicas apareceram somente no século XVII. Com a invenção da válvula, apareceram os primeiros computadores eletrônicos durante a segunda grande guerra mundial. Daí passando de válvula a transistor e, finalmente, a fantástica tecnologia de microeletrônica (VLSI), foi possível chegar ao Sunway de hoje, anunciado em junho de 2016. Faremos no final uma breve apresentação do Sunway.",
             id: 6
         }, {
-            title: "Máquina de Turing",
+            title: "A Máquina de Turing e a Essência dos Computadores",
             nome_palestrante: "Prof. Setzer",
             start: new Date(2016, 7, 24, 14),
             end: new Date(2016, 7, 24, 14, 50),
